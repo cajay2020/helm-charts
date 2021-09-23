@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "mysql.fullname" . }}
+  name: {{ .Release.Name }}-{{ .Chart.Name }}
 spec:
-  storageClassName: {{ include "mysql.fullname" . }}-{{ .Release.Namespace }}
+  storageClassName: {{ .Release.Name }}-{{ .Chart.Name }}-{{ .Release.Namespace }}
   accessModes:
     - {{ .Values.pv.accessMode }}
   resources:
