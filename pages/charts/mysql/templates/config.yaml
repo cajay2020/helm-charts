@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "mysql.fullname" . }} 
+  name: mysql
+  namespace: dalston
 data:
-  spring.datasource.username: {{ .Values.config.spring_datasource_username }}
+  spring.datasource.username: root
   V1__inital_schema.sql: |
     USE pages;
     create table pages(
