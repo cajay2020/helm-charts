@@ -3,5 +3,5 @@ data:
   PAGE_CONTENT: {{ .Values.config.PAGE_CONTENT}}
 kind: ConfigMap
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ include "mysql.fullname" . }}
 
